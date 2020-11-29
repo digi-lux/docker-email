@@ -30,15 +30,15 @@ services:
     command: ["supervisord", "--nodaemon", "--configuration", "/etc/supervisord.conf"]
   postal:
     hostname: mail
-    domainname: rawmail.nl
+    domainname: digitalluxuryint.com
     container_name: postal
     image: "theraw/dopemail:smtp"
     shm_size: '512MB'
     privileged: true
     restart: unless-stopped
     ports:
-      - '0.0.0.0:80:80'
-      - '0.0.0.0:443:443'
+      - '0.0.0.0:70:80'
+      - '0.0.0.0:543:443'
       - '0.0.0.0:25:25'
       - '0.0.0.0:2525:2525'
     networks:
